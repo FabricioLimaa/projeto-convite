@@ -40,7 +40,7 @@ $(document).ready(function() {
         });
   
         try {
-            const response = await emailjs.send("service_kk4qlks", "template_mq5aj3i", data);
+            const response = await emailjs.send("service_kk4qlks", "template_s57h6ui", data);
   
             if (response.status === 200) {
                 mensagemDiv.text("Confirmação enviada com sucesso!").css("color", "green");
