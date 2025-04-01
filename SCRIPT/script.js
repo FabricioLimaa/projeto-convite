@@ -20,7 +20,7 @@ $(document).ready(function() {
         }
     }, 1000);
   
-    emailjs.init("service_kk4qlks");
+    emailjs.init("gW1g8v3qqRwtftLeX5ijJ");
   
     const form = $("#rsvp-form");
     const mensagemDiv = $("#mensagem");
