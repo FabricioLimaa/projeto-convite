@@ -44,6 +44,12 @@
   }
   
   a {
+    background-color: #FCDBE0;
+    color: #fff;
+    padding: 10px 20px;
+   text-decoration: none;
+   border-radius: 10px;
+
     display: flex;
     justify-content: flex-end;
     text-decoration: #f8a4e4;
@@ -52,6 +58,10 @@
     color: rgb(57, 3, 34);
     padding: 10px;
     margin-bottom: 40px;
+  }
+
+  a:hover {
+    background-color: #FC8AA4;
   }
   
   ul {
@@ -128,8 +138,8 @@
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    color: white;
-    background-color: rgb(57, 3, 34);
+    color: rgb(57, 3, 34);
+    background-color: #FCDBE0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -137,7 +147,7 @@
   }
   
   button:hover {
-    background-color: #dc8ad0;
+    background-color: #FE8AA2;
   }
   
   main {
@@ -201,7 +211,7 @@
     justify-content: center;
     width: 80px;
     height: 80px;
-    border: 2px solid rgb(57, 3, 34);
+    border: 2px solid #FE8AA2;
     border-radius: 50%;
     background-color: transparent;
     transition: transform 0.3s;
@@ -214,6 +224,7 @@
   /* Footer */
   footer {
     background-color: transparent;
+    color: #6E3E20;
     text-align: center;
     width: 100%;
     padding: 10px;
