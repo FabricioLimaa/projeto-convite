@@ -56,7 +56,7 @@ $(document).ready(function() {
       nome: data.nome,
       email: data.email,
       confirmacao: data.confirmacao,
-      reply_to: "seu_email@example.com" // substitua por seu e-mail
+      reply_to: "fabriciodacostalima@gmail.com" // substitua por seu e-mail
     });
 
       if (response.status === 200) {
