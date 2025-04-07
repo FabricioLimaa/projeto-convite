@@ -28,12 +28,12 @@
 
   h2 {
     text-align: left;
-    color: rgb(57, 3, 34);
+    color: #390322;
     padding: 10px;
   }
   
   section {
-    color: rgb(57, 3, 34);
+    color: #390322;
     text-align: center;
     h1{
       margin-bottom: 20px;
@@ -55,7 +55,7 @@
     text-decoration: #f8a4e4;
     font-size: 13px;
     font-style: italic;
-    color: rgb(57, 3, 34);
+    color: #390322;
     padding: 10px;
     margin-bottom: 40px;
   }
@@ -90,7 +90,7 @@
     width: 100%;
     margin: auto;
     padding: 20px;
-    border: 1px solid rgb(57, 3, 34);
+    border: 1px solid #390322;
     border-radius: 10px;
     background-color: transparent;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -107,7 +107,7 @@
     font-size: 14px;
     width: 100%;
     align-items: center;
-    color: rgb(57, 3, 34);
+    color: #390322;
   }
   
   .confirmacao-container {
@@ -126,11 +126,11 @@
     padding: 1px;
     margin-left: 8px;
     margin-bottom: 5px;
-    border: 1px solid rgb(57, 3, 34);
+    border: 1px solid #390322;
     border-radius: 5px;
     font-size: 15px;
     text-align: center;
-    color: rgb(57, 3, 34);
+    color: #390322;
   }
   
   button {
@@ -138,7 +138,7 @@
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    color: rgb(57, 3, 34);
+    color: #390322;
     background-color: #FCDBE0;
     border: none;
     border-radius: 5px;
@@ -183,7 +183,7 @@
   
   .lista-presentes a {
     text-decoration: underline;
-    color: rgb(57, 3, 34);
+    color: #390322;
     display: inline-block;
   }
   
