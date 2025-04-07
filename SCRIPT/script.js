@@ -12,7 +12,7 @@ $(document).ready(function() {
         $("#days").text(dias);
         $("#hours").text(horas);
         $("#minutes").text(minutos);
-        $("#seconds").text(segundos);
+        
   
         if (distancia < 0) {
             clearInterval(countdown);
@@ -20,36 +20,44 @@ $(document).ready(function() {
         }
     }, 1000);
   
+    // Configuração do emailjs
     emailjs.init("0ue-h5BW-1EzcefV6");
-  
-    const form = $("#rsvp-form");
-    const mensagemDiv = $("#mensagem");
-  
-    if (!form.length) {
-        console.error("Erro: Formulário 'rsvp-form' não encontrado.");
-        return;
-    }
-  
-    form.on("submit", async function(event) {
-        event.preventDefault();
-  
-        const formData = form.serializeArray();
-        const data = {};
-        $.each(formData, function() {
-            data[this.name] = this.value;
-        });
-  
-        try {
-            const response = await emailjs.send("service_kk4qlks","template_s57h6ui", data);
-  
-            if (response.status === 200) {
-                mensagemDiv.text("Confirmação enviada com sucesso!").css("color", "green");
-            } else {
-                mensagemDiv.text("Erro ao enviar a confirmação.").css("color", "red");
-            }
-        } catch (error) {
-            console.error("Erro:", error);
-            mensagemDiv.text("Erro ao enviar a confirmação.").css("color", "red");
-        }
+
+  const form = $("#rsvp-form");
+  const mensagemDiv = $("#mensagem");
+
+  if (!form.length) {
+    console.error("Erro: Formulário 'rsvp-form' não encontrado.");
+    return;
+  }
+
+  form.on("submit", async function(event) {
+    event.preventDefault();
+
+    const formData = form.serializeArray();
+    const data = {};
+    $.each(formData, function() {
+      data[this.name] = this.value;
     });
+
+    try {
+      const response = await emailjs.send("service_kk4qlks", "template_s57h6ui", data);
+
+      if (response.status === 200) {
+        mensagemDiv.text("Confirmação enviada com sucesso!").css("color", "green");
+
+        // Enviar resposta automática
+        emailjs.send("service_kk4qlks", "template_opx1avq", {
+          to_name: data.nome,
+          to_email: data.email,
+          mensagem: "Obrigado por confirmar sua presença no evento!"
+        });
+      } else {
+        mensagemDiv.text("Erro ao enviar a confirmação.").css("color", "red");
+      }
+    } catch (error) {
+      console.error("Erro:", error);
+      mensagemDiv.text("Erro ao enviar a confirmação.").css("color", "red");
+    }
   });
+});
