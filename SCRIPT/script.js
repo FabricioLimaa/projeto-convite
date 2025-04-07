@@ -51,8 +51,13 @@ $(document).ready(function() {
     return;
   }
 
-    try {
-      const response = await emailjs.send("service_kk4qlks", "template_s57h6ui", data);
+  try {
+    const response = await emailjs.send("service_kk4qlks", "template_s57h6ui", {
+      nome: data.nome,
+      email: data.email,
+      confirmacao: data.confirmacao,
+      reply_to: "seu_email@example.com" // substitua por seu e-mail
+    });
 
       if (response.status === 200) {
         mensagemDiv.text("Confirmação enviada com sucesso!").css("color", "green");
