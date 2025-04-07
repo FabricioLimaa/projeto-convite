@@ -40,6 +40,17 @@ $(document).ready(function() {
       data[this.name] = this.value;
     });
 
+    // Validação dos dados do formulário
+  if (!data.nome || !data.email || !data.confirmacao) {
+    mensagemDiv.text("Por favor, preencha todos os campos obrigatórios.").css("color", "red");
+    return;
+  }
+
+  if (!validateEmail(data.email)) {
+    mensagemDiv.text("E-mail inválido.").css("color", "red");
+    return;
+  }
+
     try {
       const response = await emailjs.send("service_kk4qlks", "template_s57h6ui", data);
 
