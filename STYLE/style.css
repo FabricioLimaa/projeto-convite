@@ -205,10 +205,10 @@ footer {
   color: #6E3E20; 
   text-align: center; 
   width: 100%; 
-  padding: 10px; 
+  padding: 20px; 
   position: fixed; 
   bottom: 0; left: 0; 
-  border-top: 1px solid #ddd; 
+  border-top: 1px solid #FE8AA2; 
 }
 
 #notificacao { 
@@ -228,7 +228,12 @@ footer {
 #mensagem { 
   font-size: 18px; 
   font-weight: bold; 
-  color: #00698f; 
+  position: absolute;
+  top: 50%; 
+  right: 50%;
+  transform: translate(50%, -50%);
+  z-index: 9999; 
+  color: #6E3E20; 
   padding: 10px; border: 1px solid #ddd; 
   border-radius: 5px; 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
