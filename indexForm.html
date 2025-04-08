@@ -53,15 +53,14 @@
 
     <div class="confirmacao-container">
       <label for="confirmacao">Você poderá comparecer?</label>
-      <select id="confirmacao" name="confirmacao" required>
-        <option value="sim">Sim</option>
-        <option value="nao">Não</option>
-      </select>
+        <select id="confirmacao" name="confirmacao" required>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
     </div>
-      
       <button type="submit">Enviar</button>
     </form>
-
+    <div id="notificacao" style="display: none;"></div>
     <div id="mensagem" class="mensagem"></div>
   </main>
 
@@ -87,7 +86,7 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
     (function() {
-      emailjs.init("0ue-h5BW-1EzcefV6"); // Substitua pelo seu USER ID do EmailJS
+      emailjs.init("IVenFoOLReJtoRink"); // Substitua pelo seu USER ID do EmailJS
     })();
   </script>
   
