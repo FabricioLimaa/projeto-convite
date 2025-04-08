@@ -67,7 +67,7 @@ form.on("submit", async function(event) {
     }
 
     // Verifica se a pessoa tem certeza da sua escolha
-if (confirm(`Você tem certeza de que deseja ${data.confirmacao} ao evento?`)) {
+if (confirm(`Você tem certeza? Sua escolha foi ${data.confirmacao}!`)) {
   try {
     // Exibe uma mensagem de carregamento
     mensagemDiv.text("Enviando confirmação... Aguarde um momento.");
