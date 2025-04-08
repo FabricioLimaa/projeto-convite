@@ -88,7 +88,7 @@ if (confirm(`Você tem certeza? Sua escolha foi ${data.confirmacao}!`)) {
 
       // Exibe a notificação com a opção escolhida e o primeiro nome da pessoa
       const notificacao = $("#notificacao");
-      notificacao.html(`Obrigado, ${data.nome}! Você escolheu ${data.confirmacao} evento.`);
+      notificacao.html(`Obrigado, ${data.nome}! Você escolheu ${data.confirmacao} ao evento.`);
       notificacao.css("display", "block");
 
       // Enviar resposta automática
