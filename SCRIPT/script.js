@@ -28,6 +28,23 @@ $(document).ready(function() {
 // Configuração do emailjs
 emailjs.init("IVenFoOLReJtoRink");
 
+/*
+const pessoasAutorizadas = {
+  "João": true,
+  "Maria": true,
+  "Pedro": true,
+  "Ana": true,
+  "Carlos": true
+};
+
+function validarPessoa(nome) {
+  if (pessoasAutorizadas[nome]) {
+    return true;
+  } else {
+    return false;
+  }
+}*/
+
 // Seleciona o formulário de confirmação de presença
 const form = $("#rsvp-form");
 const mensagemDiv = $("#mensagem");
@@ -48,6 +65,16 @@ form.on("submit", async function(event) {
   $.each(formData, function() {
     data[this.name] = this.value;
   });
+
+  /*
+  // Validação do nome
+  const resultado = inserirNome(data.nome);
+  if (resultado.erro) {
+    mensagemDiv.addClass("erro");
+    mensagemDiv.text(resultado.erro);
+    return;
+  }
+  */
 
     // Validação dos dados do formulário
     if (!data.nome || !data.email || !data.confirmacao) {
@@ -124,5 +151,14 @@ function validateEmail(email) {
   const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return regex.test(email);
 }
+
+// Função para validar se o nome está na lista de autorizados
+/*function inserirNome(nome) {
+  if (validarPessoa(nome)) {
+    return { sucesso: true };
+  } else {
+    return { erro: `Nome não autorizado: ${nome}` };
+  }
+}*/
 
 });

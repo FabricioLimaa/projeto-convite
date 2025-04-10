@@ -1,17 +1,32 @@
 /* Definição de variáveis */
 :root {
-  --cor-principal: #390322;
+  /* Cores principais do site */
+  --cor-principal: #6E3E20;
+  --cor-secundaria: #FCDBE0;
+  --cor-terciaria: #FE8AA2;
+  
+  /* Fonte principal do site */
   --fonte-principal: 'Poppins', sans-serif;
+  
+  /* Cores de texto e fundo */
+  --cor-texto: #6E3E20;
+  --cor-fundo: transparent;
+  
+  /* Cor da borda */
+  --cor-borda: #6E3E20;
 }
 
 /* Estilos Globais */
 * {
+  /* Reset de estilos */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilo do vídeo de fundo */
 #video-fundo {
+  /* Posicionamento do vídeo */
   position: fixed;
   top: 0;
   left: 0;
@@ -22,66 +37,83 @@
   transform: translateZ(0);
 }
 
+/* Estilo do corpo do site */
 body {
+  /* Fonte principal do site */
   font-family: var(--fonte-principal);
+  
+  /* Imagem de fundo do site */
   background-image: url('../IMG/1.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+/* Estilo dos títulos */
 h2 {
+  /* Alinhamento dos títulos */
   text-align: left;
   color: var(--cor-principal);
   padding: 10px;
 }
 
+/* Estilo das seções */
 section {
+  /* Cor do texto das seções */
   color: var(--cor-principal);
   text-align: center;
-  h1{
+  
+  /* Estilo dos títulos das seções */
+  h1 {
     margin-bottom: 20px;
   }
-  h2{
+  h2 {
     text-align: center;
   }
 }
 
+/* Estilo dos links */
 a {
-  background-color: #FCDBE0;
-  color: #fff;
+  /* Cor do texto dos links */
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto);
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 10px;
   display: flex;
   justify-content: flex-end;
-  text-decoration: #f8a4e4;
   font-size: 13px;
   font-style: italic;
-  color: var(--cor-principal);
   padding: 10px;
   margin-bottom: 40px;
 }
 
+/* Estilo dos links ao passar o mouse */
 a:hover {
-  background-color: #FC8AA4;
+  background-color: var(--cor-terciaria);
 }
 
+/* Estilo das listas */
 ul {
+  /* Alinhamento das listas */
   display: flex;
   justify-content: flex-end;
   margin: 0;
   padding: 0;
 }
 
+/* Estilo dos itens das listas */
 li {
+  /* Alinhamento dos itens das listas */
   display: flex;
   align-items: center;
   margin-left: 5px;
   padding-right: 10px;
 }
 
+/* Estilo dos ícones */
 .icon {
+  /* Tamanho dos ícones */
   width: 16px;
   height: 16px;
   margin-right: 8px;
@@ -89,13 +121,14 @@ li {
 
 /* Estilos gerais do formulário */
 form {
+  /* Largura máxima do formulário */
   max-width: 400px;
   width: 100%;
   margin: auto;
   padding: 20px;
   border: 1px solid var(--cor-principal);
   border-radius: 10px;
-  background-color: transparent;
+  background-color: var(--cor-fundo);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -103,9 +136,11 @@ form {
   margin-top: 100px;
 }
 
+/* Estilo da notificação */
 .notificacao {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  /* Cor do texto da notificação */
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
   padding: 10px;
   position: fixed;
   top: 50%;
@@ -116,6 +151,7 @@ form {
 
 /* Ajuste de rótulos e entrada */
 label {
+  /* Alinhamento dos rótulos */
   display: flex;
   margin-bottom: 5px;
   font-size: 14px;
@@ -124,18 +160,23 @@ label {
   color: var(--cor-principal);
 }
 
+/* Estilo do container de confirmação */
 .confirmacao-container {
+  /* Alinhamento do container de confirmação */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px;
   width: 100%;
   max-width: 400px;
   margin-top: 5px;
 }
 
+/* Estilo dos inputs */
 input[type="text"],
 input[type="email"],
 textarea {
+  /* Largura dos inputs */
   width: 100%;
   padding: 1px;
   margin-left: 8px;
@@ -144,27 +185,44 @@ textarea {
   border-radius: 5px;
   font-size: 15px;
   text-align: center;
-  color: var(--cor-principal);
+  color: var(--cor-texto);
 }
 
+/* Estilo dos botões */
 button {
+  /* Largura dos botões */
   display: block;
   width: 100%;
   padding: 10px;
   font-size: 16px;
   color: var(--cor-principal);
-  background-color: #FCDBE0;
+  background-color: var(--cor-secundaria);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
 }
 
-button:hover {
-  background-color: #FE8AA2;
+/* Estilo dos erros */
+.erro {
+  /* Cor do texto dos erros */
+  color: #FF0000; /* vermelho */
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #FF0000;
+  border-radius: 5px;
+  background-color: #FFFFFF;
 }
 
+/* Estilo dos botões ao passar o mouse */
+button:hover {
+  background-color: var(--cor-terciaria);
+}
+
+/* Estilo do main */
 main {
+  /* Altura do main */
   height: 100%;
   min-height: calc(100vh - 60px);
   margin: 0;
@@ -173,101 +231,172 @@ main {
   align-items: center;
   padding-bottom: 60px;
 }
-  
-/* Temporizador */ 
-#countdown { 
-  display: flex; 
-  justify-content: center; 
-  gap: 20px; 
-  padding: 20px 0; 
+
+/* Estilo do temporizador */
+#countdown {
+  /* Alinhamento do temporizador */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
 }
 
-.circle { 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
-  width: 80px; 
-  height: 80px; 
-  background-color: #FCDBE0;
-  border: 2px solid #FE8AA2; 
-  border-radius: 50%; 
-  transition: transform 0.3s; 
+/* Estilo dos círculos */
+.circle {
+  /* Tamanho dos círculos */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: var(--cor-secundaria);
+  border: 2px solid var(--cor-terciaria);
+  border-radius: 50%;
+  transition: transform 0.3s;
 }
 
-.circle:hover { 
-  transform: scale(1.1); 
+/* Estilo dos círculos ao passar o mouse */
+.circle:hover {
+  transform: scale(1.1);
 }
 
-/* Footer */ 
-footer { 
-  background-color: transparent; 
-  color: #6E3E20; 
-  text-align: center; 
-  width: 100%; 
-  padding: 20px; 
-  position: fixed; 
-  bottom: 0; left: 0; 
-  border-top: 1px solid #FE8AA2; 
+/* Estilo do footer */
+footer {
+  /* Cor do texto do footer */
+  background-color: transparent;
+  color: var(--cor-texto);
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid var(--cor-terciaria);
 }
 
-#notificacao { 
+/* Estilo da notificação */
+#notificacao {
+  /* Cor do texto da notificação */
   color: var(--cor-principal);
-  position: absolute; 
-  top: 50%; 
-  right: 50%; 
-  transform: translate(50%, -50%);
-  background-color: #FCDBE0; 
-  border: 1px solid #FE8AA2; 
-  padding: 10px; 
-  border-radius: 5px; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 9999; 
-}
-
-#mensagem { 
-  font-size: 18px; 
-  font-weight: bold; 
   position: absolute;
-  top: 50%; 
+  top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
-  z-index: 9999; 
-  color: #6E3E20; 
-  padding: 10px; border: 1px solid #ddd; 
-  border-radius: 5px; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  background-color: var(--cor-secundaria);
+  border: 1px solid var(--cor-terciaria);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
 }
 
-#mensagem.success { 
-  color: #2ecc71; 
-  background-color: #f9f9f9; 
-  -color: #2ecc71; 
-}
-
-#mensagem.error { 
-  color: #e74c3c; 
-  background-color: #f9f9f9; 
-  border-color: #e74c3c;
-}
+/* Estilo da mensagem */
+#mensagem {
+  /* Tamanho da mensagem */
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  top: 60%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  z-index: 9999;
+  color: var(--cor-texto);
+  padding: 10px;
   
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da mensagem de sucesso */
+#mensagem.success {
+  /* Cor do texto da mensagem de sucesso */
+  color: #2ecc71;
+  background-color: var(--cor-fundo);
+  border-color: #2ecc71;
+}
+
+/* Estilo da mensagem de erro */
+#mensagem.error {
+  /* Cor do texto da mensagem de erro */
+  color: #e74c3c;
+  background-color: var(--cor-fundo);
+  border-color:   #e74c3c;
+}
+
 /* Media Queries para dispositivos móveis */
-  /* Media Queries para Android */
-@media only screen and (max-width: 768px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  /* Ajustes para Android */
+@media only screen and (max-width: 480px) {
+  /* Ajustes para dispositivos móveis pequenos */
+  body {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  .container {
+    padding: 20px;
+  }
+  .button {
+    padding: 10px 20px;
+  }
 }
 
-/* Media Queries para iOS */
-@media only screen and (max-width: 768px) and (orientation: portrait) and (min-device-pixel-ratio: 2) {
-  /* Ajustes para iOS */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  /* Ajustes para dispositivos móveis médios */
+  body {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  .container {
+    padding: 30px;
+  }
+  .button {
+    padding: 15px 30px;
+  }
 }
 
-/* Media Queries para desktops */
-@media only screen and (min-width: 1024px) {
-  /* Ajustes para desktops */
-}
-
-/* Media Queries para tablets */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   /* Ajustes para tablets */
+  body {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  .container {
+    padding: 40px;
+  }
+  .button {
+    padding: 20px 40px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  /* Ajustes para desktops */
+  body {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 42px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .container {
+    padding: 50px;
+  }
+  .button {
+    padding: 25px 50px;
+  }
 }
