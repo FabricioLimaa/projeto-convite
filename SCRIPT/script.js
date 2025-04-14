@@ -1,3 +1,6 @@
+// Início do código
+
+
 // Contagem regressiva para o evento
 // Defina a data do evento (exemplo: 19 de maio de 2025, às 19:00)
 $(document).ready(function() {
@@ -98,47 +101,70 @@ if (confirm(`Você tem certeza? Sua escolha foi ${data.confirmacao}!`)) {
   setTimeout(function() {
     window.location.reload();
   }, 10000);
-  try {
-    // Exibe uma mensagem de carregamento
-    mensagemDiv.text("Enviando confirmação... Aguarde um momento.");
-
+  
+  
+/*
     // Envia a confirmação de presença via emailjs
     const response = await emailjs.send("service_d1l02bl", "template_uw7rj2m", {
       nome: data.nome,
       email: data.email,
       confirmacao: data.confirmacao,
     });
-
+*/
+/*
     // Se a resposta for bem-sucedida, exibe uma mensagem de sucesso
     if (response.status === 200) {
       mensagemDiv.text("Confirmação enviada com sucesso!").css("color", "green");
+    }
+*/     
+// Verifica se a pessoa confirmou a presença ou não
+        setTimeout(function() {
+          // Envia uma mensagem de comparecimento
+        if (data.confirmacao === "Sim")
+           {
+            emailjs.send("service_d1l02bl", "sim_uw7rj2m", {
+              nome: data.nome,
+              email: data.email,
+              confirmacao: data.confirmacao,
+              mensagem: "Obrigado por confirmar sua presença.",
+            });
+          } 
+          // Envia uma mensagem de não comparecimento
+          else if (data.confirmacao === "Não") {
+            emailjs.send("service_d1l02bl", "nao_1g9i25m", {
+              nome: data.nome,
+              email: data.email,
+              confirmacao: data.confirmacao,
+              mensagem: "Confirmamos que você não comparecerá.",
+            });
+          }
+        }, 2000);
+      } 
 
-      // Exibe a notificação com a opção escolhida e o primeiro nome da pessoa
-      const notificacao = $("#notificacao");
-      notificacao.html(`Obrigado, ${data.nome}! Você escolheu ${data.confirmacao} ao evento.`);
-      notificacao.css("display", "block");
+      // Exibe uma mensagem de carregamento
+    mensagemDiv.text("Enviando confirmação... Aguarde um momento.");
 
-      // Enviar resposta automática
+    setTimeout(function() {
+      mensagemDiv.text("");
+       // Exibe a notificação com a opção escolhida e o primeiro nome da pessoa
+       
+       const notificacao = $("#notificacao");
+       notificacao.html(`Obrigado, ${data.nome}! Você escolheu ${data.confirmacao} ao evento.`);
+       notificacao.css("display", "block");
+       }, 3000);
+
+      
+    });
+      
+
+      /* Enviar resposta automática
       emailjs.send("service_d1l02bl", "template_uw7rj2m", {
         to_name: data.nome,
         to_email: data.email,
         mensagem: "Obrigado por confirmar sua presença no evento!"
-      });
-    } else {
-      mensagemDiv.text("Erro ao enviar a confirmação.").css("color", "red");
-    }
-  } catch (error) {
-    console.error("Erro:", error);
-    mensagemDiv.text("Erro ao enviar a confirmação.").css("color", "red");
-  } finally {
-    // Remove a mensagem de carregamento
-    mensagemDiv.text("");
-  }
-} else {
-  // Se a pessoa não confirmar a notificação, não envia o email
-  mensagemDiv.text("Confirmação cancelada.");
-}
-});
+      });*/
+
+ 
 
 // Função para validar o nome
 function validateName(name) {
@@ -161,4 +187,5 @@ function validateEmail(email) {
   }
 }*/
 
-});
+}) 
+// Fim do código
