@@ -71,6 +71,6 @@ Contribuições são o que tornam a comunidade open source um lugar incrível pa
 
 ## 📜 Licença
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE.txt) para mais detalhes.
 
 Criado com ❤️ por [FabricioLimaa](https://github.com/FabricioLimaa)
