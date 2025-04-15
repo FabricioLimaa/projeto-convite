@@ -92,7 +92,10 @@
         <p>Minutos</p>
       </div>
     </div>
-    <p>&copy; Desenvolvido por Fabricio Lima <span id="current-year"></span></p>
+    <p>&copy; Desenvolvido por Fabricio Lima - <span id="current-year"></span></p>
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
     <p>&reg; Todos os direitos reservados</p>
   </footer>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
