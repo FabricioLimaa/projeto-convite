@@ -1,36 +1,113 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre mim</title>
-    <link rel="stylesheet" href="./STYLE/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  <link rel="stylesheet" href="./STYLE/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="icon" type="image/png" href="./IMG/sakura.png">
+  <style>
+    body {
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+        padding: 20px;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+
+    section {
+      margin-bottom: 20px;
+        padding: 20px;
+        align-items: center;
+    }
+
+  </style>
 </head>
 
 <body>
-    <header class="cabecalho">
-        <nav class="cabecalho__menu">
-            <a class="cabecalho__menu__link" href="index.html">Home</a>
-            <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
-        </nav>
-    </header>
 
-    <main class="apresentacao">
-        <section class="apresentacao__conteudo">
-            <h1 class="apresentacao__conteudo__titulo">Sobre mim</h1>
-            <p class="apresentacao__conteudo__texto">Meu nome é Fabricio Lima, tenho 35 anos e sou estudante de Ciência da Computação na Universidade Estacio de Sá. 
-            Sou apaixonado por tecnologia, programação, design e inovação. Gosto de trabalhar em equipe, aprender coisas novas e criar soluções inovadoras.
-            </p>
-            <p class="apresentacao__conteudo__texto">
-            Atualmente estou cursando o 3º período de Ciência da Computação na Universidade Estacio de Sá, e pretendo me especializar em Ciência de Dados.
-            Meus hobbies são assistir filmes, jogar video-games e ler livros.
-            </p>
-        </section>
-        <img class="apresentacao__imagem" src="../IMG/Imagem.png" alt="Foto da Joana Santos programando">
-    </main>
-    <footer class="rodape">Desenvolvido por Fabricio Lima &copy; 2025 - Alura + Oracle ONE</footer>
+    <video id="video-fundo" autoplay muted loop>
+        <source src="./IMG/1.1.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+
+  <header>
+    <h2></h2>
+    <nav>
+      <ul>
+        <li>
+          <a href="./indexForm.html" target="_self">
+            <img src="./IMG/checkmark.png" 
+                 alt="confirmação" class="icon"> Confirme sua Presença
+          </a>
+        </li>
+        <li>
+            <a href="https://maps.app.goo.gl/UYSJJtWus5ddQZ4Z7" target="_self">
+              <img src="./IMG/Local.png" 
+                   alt="Localização" class="icon"> Ver Localização
+            </a>
+          </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Sobre o Projeto Convite</h2>
+      <p>Bem-vindo ao Projeto Convite!</p>
+      <p>O Projeto Convite é um projeto de código aberto que visa criar convites digitais personalizados para eventos e ocasiões especiais. O projeto é desenvolvido por uma comunidade de contribuintes que buscam criar um software de alta qualidade e fácil de usar.</p>
+    </section>
+
+    <section>
+      <h2>História do Projeto</h2>
+      <p>O Projeto Convite foi iniciado em [data de início] por [nome do criador] com o objetivo de criar um software de convites digitais que fosse fácil de usar e personalizável. Desde então, o projeto tem recebido contribuições de muitos desenvolvedores e designers que buscam melhorar e expandir as funcionalidades do software.</p>
+    </section>
+
+    <section>
+      <h2>Objetivos do Projeto</h2>
+      <ul>
+        <li>Criar um software de convites digitais que seja fácil de usar e personalizável</li>
+        <li>Oferecer uma variedade de modelos e temas para convites</li>
+        <li>Permitir que os usuários criem convites personalizados com facilidade</li>
+        <li>Fornecer um software de alta qualidade e estável</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Como Contribuir</h2>
+      <p>Se você é um desenvolvedor, designer ou simplesmente alguém que gostaria de contribuir para o projeto, há muitas maneiras de fazer isso! Você pode:</p>
+      <ul>
+        <li>Contribuir com código: se você é um desenvolvedor, pode contribuir com código para melhorar e expandir as funcionalidades do software.</li>
+        <li>Criar modelos e temas: se você é um designer, pode criar modelos e temas para convites que possam ser usados no software.</li>
+        <li>Traduzir o software: se você é fluente em outro idioma, pode traduzir o software para que mais pessoas possam usá-lo.</li>
+        <li>Relatar bugs e sugerir melhorias: se você encontra um bug ou tem uma sugestão de melhoria, pode relatar no nosso repositório no GitHub.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Licensa</h2>
+      <p>O Projeto Convite é licenciado sob a licença MIT. Isso significa que você pode usar, modificar e distribuir o software livremente, desde que você respeite os termos da licença.</p>
+    </section>
+
+    <section>
+      <h2>Contato</h2>
+      <p>Se você tiver alguma dúvida ou precisar de mais informações, por favor, entre em contato conosco em <a href="mailto:fabriciolimaa@gmail.com">fabriciolimaa@gmail.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Desenvolvido por Fabricio Lima 2025</p>
+    <p>&reg; Todos os direitos reservados</p>
+  </footer>
+
+  <script src="./SCRIPT/script.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,49 @@
+LICENÇA DO PROJETO CONVITE
+
+Copyright (c) 2023 FabricioLimaa
+
+Permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia
+deste software e dos arquivos de documentação associados (o "Software"), para
+tratar o Software sem restrições, incluindo, sem limitação, os direitos de
+usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender
+cópias do Software, e para permitir que os destinatários do Software o façam,
+sujeito às seguintes condições:
+
+O Software é fornecido "como está", sem garantia de qualquer tipo, expressa ou
+implícita, incluindo, mas não limitado a, garantias de comercialização,
+adequação a um fim específico e não violação de direitos autorais. Em nenhum
+caso, os autores ou detentores de direitos autorais serão responsáveis por
+qualquer reclamação, danos ou outras responsabilidades, seja em ação de contrato,
+torto ou de outra forma, decorrentes de, ou em conexão com o Software ou o uso
+ou outras negociações no Software.
+
+TERMINOLOGIA
+
+* "Software" se refere a todos os arquivos de código-fonte, documentação e
+outros materiais incluídos no Projeto Convite.
+* "Você" se refere a qualquer pessoa que obtenha uma cópia do Software.
+* "Autores" se refere a todos os contribuintes do Projeto Convite.
+
+ACEITAÇÃO
+
+Ao usar ou distribuir o Software, você aceita os termos e condições desta
+licença. Se você não concorda com os termos e condições desta licença, você não
+pode usar ou distribuir o Software.
+
+REVISÃO
+
+Esta licença pode ser revisada e atualizada a qualquer momento. A versão mais
+recente da licença estará disponível no repositório do Projeto Convite.
+
+CONTATO
+
+Se você tiver alguma dúvida ou precisar de mais informações, por favor, entre em
+contato conosco em [fabriciodacostalima@gmail.com](mailto:fabriciodacostalima@gmail.com).
+
+LICENÇA
+
+Este software é licenciado sob a licença MIT.
+
+COPYRIGHT
+
+Copyright (c) 2023 FabricioLimaa. Todos os direitos reservados.
