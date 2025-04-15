@@ -3,18 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Convite para o Aniversário da Elisa" />
+  <meta name="keywords" content="Aniversário, Elisa, Festa, Festival, Festa de Aniversário" />
   <title>Aniversário da Elisa</title>
-  <link rel="stylesheet" href="./STYLE/style.css" />
+  <link rel="stylesheet" href="./style/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="icon" type="image/png" href="./IMG/icon-flores.png">
+  <link rel="icon" type="image/png" href="./images/icon-flores.png">
 </head>
 
 <body>
 
-  <video id="video-fundo" autoplay muted loop>
-    <source src="./IMG/video-fundo-princ.mp4" type="video/mp4">
+  <video id="video-fundo" muted loop>
+    <source src="./video/video-fundo-princ.mp4" type="video/mp4">
     Seu navegador não suporta vídeos.
   </video>
+  <script>
+    window.addEventListener('load', () => {
+      const video = document.getElementById('video-fundo');
+      video.play();
+    });
+  </script>
 
   <header>
     <h2></h2>
@@ -22,27 +31,20 @@
       <ul>
         <li>
           <a href="./indexForm.html" target="_self">
-            <img src="./IMG/icon-check.png" 
+            <img src="./images/icon-check.png" 
                  alt="confirmação" class="icon"> Confirme sua Presença
           </a>
         </li>
         <li>
           <a href="https://maps.app.goo.gl/UYSJJtWus5ddQZ4Z7" target="_self">
-            <img src="./IMG/icon-local.png" 
+            <img src="./images/icon-local.png" 
                  alt="Localização" class="icon"> Ver Localização
           </a>
         </li>
       </ul>
     </nav>
   </header>
-
-  <section>
-  
-    
-  </section>
-  
   <footer>
-    
     <div id="countdown">
       <div class="circle">
         <span id="days">00</span>
@@ -57,10 +59,13 @@
         <p>Minutos</p>
       </div>
     </div>
-    <p>&copy; Desenvolvido por Fabricio Lima 2025</p>
+    <p>&copy; Desenvolvido por Fabricio Lima <span id="current-year"></span></p>
+     <script>
+       document.getElementById('current-year').textContent = new Date().getFullYear();
+     </script>
     <p>&reg; Todos os direitos reservados</p>
   </footer>
 
-  <script src="./SCRIPT/script.js"></script>
+  <script src="./script/script.js" defer></script>
 </body>
 </html>

@@ -43,7 +43,7 @@ body {
   font-family: var(--fonte-principal);
   
   /* Imagem de fundo do site */
-  background-image: url('../IMG/1.png');
+  background-image: url('../IMG/img-fundo-secun.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Confirmação de Presença para o Aniversário da Elisa" />
+  <meta name="keywords" content="convite, aniversário, Elisa, confirmação de presença" />
   <title>Confirme sua Presença</title>
-  <link rel="stylesheet" href="./STYLE/style.css">
+  <link rel="stylesheet" href="./style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="icon" type="image/png" href="./IMG/icon-flores.png">
+  <link rel="icon" type="image/png" href="./images/icon-flores.png">
 </head>
 
 <body>
 
   <video id="video-fundo" autoplay muted loop>
-    <source src="./IMG/video-fundo-secun.mp4" type="video/mp4">
+    <source src="./video/video-fundo-secun.mp4" type="video/mp4">
     Seu navegador não suporta vídeos.
   </video>
 
@@ -23,14 +25,13 @@
       <ul>
         <li>
           <a href="./index.html" target="_self">
-            <img src="./IMG/icon-voltar.png"
+            <img src="./images/icon-voltar.png"
                  alt="confirmação" class="icon"> Voltar
           </a>
         </li>
-        
         <li>
-          <a href="https://maps.app.goo.gl/UYSJJtWus5ddQZ4Z7" target="_self">
-            <img src="./IMG/icon-local.png" 
+          <a href="https://maps.app.goo.gl/UYSJJtWus5ddQZ4Z7">
+            <img src="./images/icon-local.png" 
                  alt="Localização" class="icon"> Ver Localização
           </a>
         </li>
@@ -48,15 +49,15 @@
       <label for="email">
         <i class="fas fa-envelope"></i> 
         <input type="email" id="email" name="email" placeholder="Insira seu Email" required>
-    </label>
+      </label>
 
-    <div class="confirmacao-container">
-      <label for="confirmacao">Você poderá comparecer?</label>
+      <div class="confirmacao-container">
+        <label for="confirmacao">Você poderá comparecer?</label>
         <select id="confirmacao" name="confirmacao" required>
           <option value="Sim">Sim</option>
           <option value="Não">Não</option>
         </select>
-    </div>
+      </div>
       <button type="submit">Enviar</button>
     </form>
     <div id="notificacao" style="display: none;"></div>
@@ -64,7 +65,6 @@
   </main>
 
   <footer>
-    
     <div id="countdown">
       <div class="circle">
         <span id="days">00</span>
@@ -79,16 +79,15 @@
         <p>Minutos</p>
       </div>
     </div>
-    <p>&copy; Desenvolvido por Fabricio Lima 2025</p>
+    <p>&copy; Desenvolvido por Fabricio Lima <span id="current-year"></span></p>
     <p>&reg; Todos os direitos reservados</p>
   </footer>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
   <script type="text/javascript">
     (function() {
       emailjs.init("IVenFoOLReJtoRink"); // Substitua pelo seu USER ID do EmailJS
     })();
   </script>
-  
-  <script src="./SCRIPT/script.js"></script>
+  <script src="./script/script.js" defer></script>
 </body>
 </html>

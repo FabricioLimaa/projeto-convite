@@ -1,6 +1,6 @@
 LICENÇA DO PROJETO CONVITE
 
-Copyright (c) 2023 FabricioLimaa
+Copyright (c) 2023 Fabricio Lima
 
 Permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia
 deste software e dos arquivos de documentação associados (o "Software"), para
@@ -46,4 +46,4 @@ Este software é licenciado sob a licença MIT.
 
 COPYRIGHT
 
-Copyright (c) 2023 FabricioLimaa. Todos os direitos reservados.
+Copyright (c) 2023 Fabricio Lima. Todos os direitos reservados.

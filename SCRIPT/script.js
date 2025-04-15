@@ -4,11 +4,13 @@
 // Contagem regressiva para o evento
 // Defina a data do evento (exemplo: 19 de maio de 2025, às 19:00)
 $(document).ready(function() {
+  // Data do evento em milissegundos
   const eventoData = new Date("2025-05-19T19:00:00").getTime();
-
   // Cria um intervalo para atualizar a contagem regressiva a cada segundo
   const countdown = setInterval(() => {
+    // Data atual em milissegundos
     const agora = new Date().getTime();
+    // Diferença entre a data do evento e a data atual
     const distancia = eventoData - agora;
 
     // Calcula os dias, horas e minutos restantes até o evento
@@ -97,12 +99,10 @@ form.on("submit", async function(event) {
     }
 
     // Verifica se a pessoa tem certeza da sua escolha
-if (confirm(`Você tem certeza? Sua escolha foi ${data.confirmacao}!`)) {
-  setTimeout(function() {
-    window.location.reload();
-  }, 10000);
-  
-  
+    if (confirm(`Você tem certeza? Sua escolha foi ${data.confirmacao}!`)) {
+      setTimeout(function() {
+        window.location.reload();
+      }, 10000);
 /*
     // Envia a confirmação de presença via emailjs
     const response = await emailjs.send("service_d1l02bl", "template_uw7rj2m", {
@@ -117,54 +117,46 @@ if (confirm(`Você tem certeza? Sua escolha foi ${data.confirmacao}!`)) {
       mensagemDiv.text("Confirmação enviada com sucesso!").css("color", "green");
     }
 */     
-// Verifica se a pessoa confirmou a presença ou não
-        setTimeout(function() {
-          // Envia uma mensagem de comparecimento
-        if (data.confirmacao === "Sim")
-           {
-            emailjs.send("service_d1l02bl", "sim_uw7rj2m", {
-              nome: data.nome,
-              email: data.email,
-              confirmacao: data.confirmacao,
-              mensagem: "Obrigado por confirmar sua presença.",
-            });
-          } 
-          // Envia uma mensagem de não comparecimento
-          else if (data.confirmacao === "Não") {
-            emailjs.send("service_d1l02bl", "nao_1g9i25m", {
-              nome: data.nome,
-              email: data.email,
-              confirmacao: data.confirmacao,
-              mensagem: "Confirmamos que você não comparecerá.",
-            });
-          }
-        }, 2000);
-      } 
+// Verifica se a pessoa tem certeza da sua escolha
+    setTimeout(function() {
+    if (data.confirmacao === "Sim")
+       {
+        emailjs.send("service_d1l02bl", "sim_uw7rj2m", {
+          nome: data.nome,
+          email: data.email,
+          confirmacao: data.confirmacao,
+          mensagem: "Obrigado por confirmar sua presença.",
+        });
+      }
+      // Envia uma mensagem de não comparecimento
+      else if (data.confirmacao === "Não") {
+        emailjs.send("service_d1l02bl", "nao_1g9i25m", {
+          nome: data.nome,
+          email: data.email,
+          confirmacao: data.confirmacao,
+          mensagem: "Confirmamos que você não comparecerá.",
+        });
+      }
+    }, 2000);
+  } 
 
-      // Exibe uma mensagem de carregamento
+    // Exibe uma mensagem de carregamento
     mensagemDiv.text("Enviando confirmação... Aguarde um momento.");
-
     setTimeout(function() {
       mensagemDiv.text("");
        // Exibe a notificação com a opção escolhida e o primeiro nome da pessoa
-       
        const notificacao = $("#notificacao");
        notificacao.html(`Obrigado, ${data.nome}! Você escolheu ${data.confirmacao} ao evento.`);
        notificacao.css("display", "block");
-       }, 3000);
-
-      
-    });
-      
-
+    }, 3000);
+  });
+}) 
       /* Enviar resposta automática
       emailjs.send("service_d1l02bl", "template_uw7rj2m", {
         to_name: data.nome,
         to_email: data.email,
         mensagem: "Obrigado por confirmar sua presença no evento!"
       });*/
-
- 
 
 // Função para validar o nome
 function validateName(name) {
@@ -187,5 +179,4 @@ function validateEmail(email) {
   }
 }*/
 
-}) 
 // Fim do código
