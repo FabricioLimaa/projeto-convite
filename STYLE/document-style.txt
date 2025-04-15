@@ -1,0 +1,55 @@
+
+
+**Documentação do Style**
+
+**Introdução**
+
+Este é um arquivo CSS que define estilos para uma página web. Aqui está uma visão geral da estrutura e do conteúdo do arquivo:
+
+**Variáveis**
+
+O arquivo começa definindo variáveis CSS que serão usadas ao longo do arquivo. Essas variáveis são definidas usando a sintaxe `:root { ... }`. As variáveis definidas incluem:
+
+* `--cor-principal`: a cor principal do site
+* `--cor-secundaria`: a cor secundária do site
+* `--cor-terciaria`: a cor terciária do site
+* `--fonte-principal`: a fonte principal do site
+* `--cor-texto`: a cor do texto
+* `--cor-fundo`: a cor de fundo
+* `--cor-borda`: a cor da borda
+
+**Estilos Globais**
+
+A seção seguinte define estilos globais para a página. Isso inclui:
+
+* `* { ... }`: um seletor que aplica estilos a todos os elementos da página
+* `body { ... }`: um seletor que aplica estilos ao corpo da página
+* `h1`, `h2`, `h3`, etc.: seletores que aplicam estilos a títulos de diferentes níveis
+
+**Estilos de Componentes**
+
+A seção seguinte define estilos para componentes específicos da página, como:
+
+* `#video-fundo { ... }`: um seletor que aplica estilos ao vídeo de fundo
+* `.icon { ... }`: um seletor que aplica estilos aos ícones
+* `form { ... }`: um seletor que aplica estilos ao formulário
+* `.notificacao { ... }`: um seletor que aplica estilos à notificação
+
+**Estilos de Layout**
+
+A seção seguinte define estilos de layout para a página, incluindo:
+
+* `main { ... }`: um seletor que aplica estilos ao main da página
+* `.container { ... }`: um seletor que aplica estilos ao container da página
+* `.button { ... }`: um seletor que aplica estilos ao botão
+
+**Media Queries**
+
+A seção final define media queries que ajustam os estilos para diferentes tamanhos de tela. Isso inclui:
+
+* `@media only screen and (max-width: 480px) { ... }`: um seletor que aplica estilos para dispositivos móveis pequenos
+* `@media only screen and (min-width: 481px) and (max-width: 768px) { ... }`: um seletor que aplica estilos para dispositivos móveis médios
+* `@media only screen and (min-width: 769px) and (max-width: 1024px) { ... }`: um seletor que aplica estilos para tablets
+* `@media only screen and (min-width: 1025px) { ... }`: um seletor que aplica estilos para desktops
+
+Em resumo, este arquivo CSS define estilos para uma página web, incluindo variáveis, estilos globais, estilos de componentes, estilos de layout e media queries para ajustar os estilos para diferentes tamanhos de tela.

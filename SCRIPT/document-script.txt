@@ -1,0 +1,62 @@
+
+
+**Documentação do Script**
+
+**Introdução**
+
+Este código é responsável por gerenciar a contagem regressiva para um evento e enviar confirmações de presença via e-mail. Ele utiliza a biblioteca jQuery para manipular o DOM e a biblioteca emailjs para enviar e-mails.
+
+**Funções**
+
+### `validateName(name)`
+
+* **Descrição**: Valida se um nome é válido.
+* **Parâmetros**:
+	+ `name`: O nome a ser validado.
+* **Retorno**: Um booleano indicando se o nome é válido ou não.
+
+### `validateEmail(email)`
+
+* **Descrição**: Valida se um e-mail é válido.
+* **Parâmetros**:
+	+ `email`: O e-mail a ser validado.
+* **Retorno**: Um booleano indicando se o e-mail é válido ou não.
+
+### `enviarConfirmacao(data)`
+
+* **Descrição**: Envia uma confirmação de presença via e-mail.
+* **Parâmetros**:
+	+ `data`: Um objeto contendo as informações da confirmação (nome, e-mail, confirmação, etc.).
+* **Retorno**: Nenhum.
+
+### `gerenciarContagemRegressiva()`
+
+* **Descrição**: Gerencia a contagem regressiva para o evento.
+* **Parâmetros**: Nenhum.
+* **Retorno**: Nenhum.
+
+**Variáveis**
+
+* `eventoData`: A data do evento em milissegundos.
+* `countdown`: O intervalo para atualizar a contagem regressiva.
+* `form`: O formulário de confirmação de presença.
+* `mensagemDiv`: O elemento que exibe a mensagem de confirmação.
+
+**Fluxo de Execução**
+
+1. O código é executado quando a página é carregada.
+2. A função `gerenciarContagemRegressiva()` é chamada para gerenciar a contagem regressiva.
+3. A função `enviarConfirmacao(data)` é chamada quando o formulário de confirmação de presença é submetido.
+4. As funções `validateName()` e `validateEmail()` são chamadas para validar os dados do formulário.
+5. Se os dados forem válidos, a função `enviarConfirmacao(data)` é chamada para enviar a confirmação de presença via e-mail.
+
+**Requisitos**
+
+* jQuery
+* emailjs
+* Um servidor de e-mail configurado para enviar e-mails via emailjs.
+
+**Limitações**
+
+* O código não é responsivo e pode não funcionar corretamente em dispositivos móveis.
+* O código não é seguro e pode ser vulnerável a ataques de cross-site scripting (XSS).
