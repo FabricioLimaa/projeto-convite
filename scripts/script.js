@@ -3,8 +3,8 @@
 // Contagem regressiva para o evento
 // Defina a data do evento (exemplo: 19 de maio de 2025, às 19:00)
 $(document).ready(function() {
-
-/* TESTANDO FORMULÁRIO DE MENSAGEM
+/*
+  // TESTANDO FORMULÁRIO DE MENSAGEM
   const formMensagem = document.getElementById('form-mensagem');
   const textareaMensagem = document.getElementById('mensagem');
   const enviarMensagem = document.getElementById('enviar-mensagem');
