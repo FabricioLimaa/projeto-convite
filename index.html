@@ -14,16 +14,10 @@
 
 <body>
 
-  <video id="video-fundo" muted loop>
+  <video id="video-fundo" autoplay muted loop loading="lazy" poster="./images/img-fundo-secun.png">
     <source src="./videos/video-fundo-princ.mp4" type="video/mp4">
     Seu navegador não suporta vídeos.
   </video>
-  <script>
-    window.addEventListener('load', () => {
-      const video = document.getElementById('video-fundo');
-      video.play();
-    });
-  </script>
 
   <header>
     <h2></h2>
@@ -59,10 +53,12 @@
         <p>Minutos</p>
       </div>
     </div>
-    <p>&copy; Desenvolvido por Fabricio Lima - <span id="current-year"></span></p>
-    <script>
-      document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    <p>&copy; Desenvolvido por <span id="developer-name"></span> - <span id="current-year"></span></p>
+      <script>
+        const developerName = "Fabricio Lima";
+        document.getElementById('developer-name').textContent = developerName;
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+      </script>
     <p>&reg; Todos os direitos reservados</p>
   </footer>
 

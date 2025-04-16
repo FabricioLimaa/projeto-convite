@@ -378,19 +378,20 @@ footer {
   border-color:   #e74c3c;
 }
 
-/*
-Estilos para a seção de mensagens
-#mensagens {
+
+/*Estilos para a seção de mensagens*/
+#mensagem-section {
   max-width: 800px;
-  margin: 40px auto;
-  margin-top: -20px;
+  margin: 100px auto;
+  margin-top: 20px;
   padding: 20px;
-  background-color: var(--cor-secundaria);
+  background-color: var(--cor-fundo);
   border: 1px solid var(--cor-terciaria);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 5px;
 }
 
 #mensagens h2 {
@@ -405,12 +406,15 @@ Estilos para a seção de mensagens
   margin-top: 10px;
   margin-bottom: 10px;
   padding-bottom: 10px;
-  width: 100%;
-  max-width: 400px;
+  width: 500px;
+  max-width: 100%;
   padding: 20px;
   background-color: var(--cor-fundo);
   border: 1px solid var(--cor-terciaria);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #mensagem-from {
@@ -422,7 +426,7 @@ Estilos para a seção de mensagens
 }
 
 #enviar-mensagem {
-  background-color: var(--cor-principal);
+  background-color: var(--cor-secundaria);
   color: var(--cor-texto);
   padding: 10px 20px;
   border: none;
@@ -433,6 +437,7 @@ Estilos para a seção de mensagens
 
 #enviar-mensagem:hover {
   background-color: var(--cor-terciaria);
+  transition: all 0.1s ease-in-out;
 }
 
 #mensagens-enviadas {
@@ -444,6 +449,7 @@ Estilos para a seção de mensagens
   background-color: var(--cor-fundo);
   border: 1px solid var(--cor-terciaria);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 .mensagem-enviada {
@@ -460,7 +466,14 @@ Estilos para a seção de mensagens
 .mensagem-enviada p:last-child {
   margin-bottom: 0;
 }
-*/
+
+.contador-caracteres {
+  font-size: 10px;
+  color: var(--cor-texto);
+  margin-top: 10px;
+  text-align: right;
+}
+
 
 /* Media Queries para dispositivos móveis */
 @media only screen and (max-width: 480px) {

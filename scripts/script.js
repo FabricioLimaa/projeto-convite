@@ -4,35 +4,56 @@
 // Defina a data do evento (exemplo: 19 de maio de 2025, às 19:00)
 $(document).ready(function() {
 /*
-  // TESTANDO FORMULÁRIO DE MENSAGEM
-  const formMensagem = document.getElementById('form-mensagem');
-  const textareaMensagem = document.getElementById('mensagem');
-  const enviarMensagem = document.getElementById('enviar-mensagem');
-  const mensagensEnviadas = document.getElementById('mensagens-enviadas');
+// TESTANDO FORMULÁRIO DE MENSAGEM
+const formMensagem = document.getElementById('form-mensagem');
+const textareaMensagem = document.getElementById('mensagem-from');
+const contadorCaracteres = document.getElementById('contador-caracteres');
+const enviarMensagem = document.getElementById('enviar-mensagem');
+const mensagensEnviadas = document.getElementById('mensagens-enviadas');
 
-  enviarMensagem.addEventListener('click', (e) => {
-    e.preventDefault();
-    const mensagem = textareaMensagem.value.trim();
-    if (mensagem !== '') {
-      // Enviar a mensagem para o servidor (ou armazená-la localmente)
-      // Aqui você pode usar uma API ou um banco de dados para armazenar as mensagens
-      const mensagemEnviada = {
-        texto: mensagem,
-        data: new Date().toLocaleString(),
-      };
-      mensagensEnviadas.innerHTML += `
-        <div class="mensagem-enviada">
-          <p>${mensagemEnviada.texto}</p>
-          <p>Enviada em: ${mensagemEnviada.data}</p>
-        </div>
-      `;
-      textareaMensagem.value = '';
-    }
-  });
+const limiteCaracteres = 200;
+
+// Adiciona um evento de input ao campo de texto
+textareaMensagem.addEventListener('input', () => {
+  const caracteresDigitados = textareaMensagem.value.length;
+  const caracteresRestantes = limiteCaracteres - caracteresDigitados;
+  // Verifica se o usuário digitou mais de 200 caracteres
+  if (caracteresDigitados > limiteCaracteres) {
+    textareaMensagem.value = textareaMensagem.value.substring(0, limiteCaracteres);
+    alert(`Você não pode digitar mais de ${limiteCaracteres} caracteres!`);
+  }
+  contadorCaracteres.textContent = caracteresRestantes;
+});
+
+enviarMensagem.addEventListener('click', (e) => {
+  e.preventDefault();
+  const mensagem = textareaMensagem.value.trim();
+  if (mensagem === '') {
+    alert('Por favor, digite uma mensagem!');
+    return;
+  }
+  if (mensagem.length > limiteCaracteres) {
+    alert(`A mensagem não pode ter mais de ${limiteCaracteres} caracteres!`);
+    return;
+  }
+  // Enviar a mensagem para o servidor (ou armazená-la localmente)
+  // Aqui você pode usar uma API ou um banco de dados para armazenar as mensagens
+  const mensagemEnviada = {
+    texto: mensagem,
+    data: new Date().toLocaleString(),
+  };
+  mensagensEnviadas.innerHTML += `
+    <div class="mensagem-enviada">
+      <p>${mensagemEnviada.texto}</p>
+      <p>Enviada em: ${mensagemEnviada.data}</p>
+    </div>
+  `;
+  textareaMensagem.value = '';
+});
 */
 
   // Data do evento em milissegundos
-  const eventoData = new Date("2025-05-19T19:00:00").getTime();
+  const eventoData = new Date("2025-05-19T19:30:00").getTime();
   // Cria um intervalo para atualizar a contagem regressiva a cada segundo
   const countdown = setInterval(() => {
     // Data atual em milissegundos
