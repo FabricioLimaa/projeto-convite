@@ -3,7 +3,7 @@
 // Contagem regressiva para o evento
 // Defina a data do evento (exemplo: 19 de maio de 2025, às 19:00)
 $(document).ready(function() {
-/*
+
 // TESTANDO FORMULÁRIO DE MENSAGEM
 const formMensagem = document.getElementById('form-mensagem');
 const textareaMensagem = document.getElementById('mensagem-from');
@@ -50,7 +50,7 @@ enviarMensagem.addEventListener('click', (e) => {
   `;
   textareaMensagem.value = '';
 });
-*/
+
 
   // Data do evento em milissegundos
   const eventoData = new Date("2025-05-19T19:30:00").getTime();
