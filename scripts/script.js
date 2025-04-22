@@ -108,9 +108,26 @@ if (!form.length) {
   return;
 }
 
+// Função para verificar a conexão com a internet
+async function hasInternetConnection() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+    return response.ok;
+  } catch (error) {
+    return false;
+  }
+}
+
 // Adiciona um evento de envio ao formulário
 form.on("submit", async function(event) {
   event.preventDefault();
+
+  // Verifica a conexão com a internet
+  const isConnected = await hasInternetConnection();
+  if (!isConnected) {
+    mensagemDiv.text("Sem conexão com a internet.").css("color", "red");
+    return;  
+  }
 
   // Serializa os dados do formulário
   const formData = form.serializeArray();
