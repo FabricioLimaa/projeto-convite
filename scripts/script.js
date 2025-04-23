@@ -138,9 +138,9 @@ form.on("submit", async function(event) {
   if (!isConnected) {
     Swal.fire({
       title: 'Erro!',
-      text: 'Sem conexão com a internet.',
+      text: 'Não foi possível enviar sua confirmação. Verifique sua conexão com a internet.',
       icon: 'error',
-      confirmButtonText: 'OK'
+      confirmButtonText: 'Tentar Novamente'
     });
     return;
   }
@@ -182,12 +182,20 @@ form.on("submit", async function(event) {
   }
 
   const resultado = await Swal.fire({
-    title: 'Você tem certeza?',
-    text: `Sua escolha foi ${data.confirmacao}!`,
+    title: 'Confirmação de Presença',
+    text: `Você confirma que escolheu "${data.confirmacao}" para o evento?`,
     icon: 'question',
     showCancelButton: true,
-    confirmButtonText: 'Sim',
-    cancelButtonText: 'Não'
+    confirmButtonText: 'Sim, Confirmo',
+    cancelButtonText: 'Não, Cancelar',
+    customClass: {
+      popup: 'custom-popup-class',
+      title: 'custom-title-class',
+      text: 'custom-text-class',
+      confirmButton: 'custom-confirm-button-class',
+      cancelButton: 'custom-cancel-button-class'
+    }
+    
   });
 
   if (resultado.isConfirmed) {
@@ -195,10 +203,10 @@ form.on("submit", async function(event) {
     setTimeout(async function() {
       mensagemDiv.text("");
       Swal.fire({
-        title: 'Sucesso!',
-        text: `Obrigado, ${data.nome}! Você escolheu ${data.confirmacao} ao evento.`,
+        title: 'Confirmação Enviada!',
+        text: `Obrigado, ${data.nome}! Sua escolha foi registrada com sucesso.`,
         icon: 'success',
-        confirmButtonText: 'OK'
+        confirmButtonText: 'Fechar'
       });
 
       const templateId = data.confirmacao === "Sim" ? "sim_uw7rj2m" : "nao_1g9i25m";
@@ -216,7 +224,7 @@ form.on("submit", async function(event) {
       title: 'Cancelado!',
       text: 'Confirmação cancelada.',
       icon: 'info',
-      confirmButtonText: 'OK'
+      confirmButtonText: 'Fechar'
     });
   }
 });

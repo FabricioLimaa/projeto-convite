@@ -474,6 +474,43 @@ footer {
   text-align: right;
 }
 
+.custom-popup-class {
+  border-radius: 10px;
+  font-family: var(--fonte-principal);
+  
+}
+
+.custom-title-class {
+  color: var(--cor-principal);
+  font-size: 20px;
+}
+
+.custom-text-class {
+  color: var(--cor-principal);
+  font-size: 16px;
+}
+
+.custom-confirm-button-class {
+  background-color: var(--cor-terciaria);
+  color: var(--cor-principal);
+  border-radius: 5px;
+}
+
+.custom-confirm-button-class:hover {
+  background-color: var(--cor-secundaria);
+  transition: all 0.1s ease-in-out;
+}
+
+.custom-cancel-button-class {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-principal);
+  border-radius: 5px;
+}
+
+.custom-cancel-button-class:hover {
+  background-color: var(--cor-terciaria);
+  transition: all 0.1s ease-in-out;
+}
 
 /* Media Queries para dispositivos móveis */
 @media only screen and (max-width: 480px) {
