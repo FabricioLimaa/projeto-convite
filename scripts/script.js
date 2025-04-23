@@ -81,6 +81,19 @@ enviarMensagem.addEventListener('click', (e) => {
 // Configuração do emailjs
 emailjs.init("IVenFoOLReJtoRink");
 
+async function enviarEmail(templateId, data) {
+  try {
+    const response = await emailjs.send("service_d1l02bl", templateId, data);
+    if (response.status === 200) {
+      console.log("E-mail enviado com sucesso!");
+    } else {
+      console.error("Erro ao enviar e-mail:", response);
+    }
+  } catch (error) {
+    console.error("Erro ao enviar e-mail:", error);
+  }
+}
+
 /*
 const pessoasAutorizadas = {
   "João": true,
@@ -118,104 +131,95 @@ async function hasInternetConnection() {
   }
 }
 
-// Adiciona um evento de envio ao formulário
 form.on("submit", async function(event) {
   event.preventDefault();
 
-  // Verifica a conexão com a internet
   const isConnected = await hasInternetConnection();
   if (!isConnected) {
-    mensagemDiv.text("Sem conexão com a internet.").css("color", "red");
-    return;  
+    Swal.fire({
+      title: 'Erro!',
+      text: 'Sem conexão com a internet.',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    });
+    return;
   }
 
-  // Serializa os dados do formulário
   const formData = form.serializeArray();
   const data = {};
   $.each(formData, function() {
     data[this.name] = this.value;
   });
 
-  /*
-  // Validação do nome
-  const resultado = inserirNome(data.nome);
-  if (resultado.erro) {
-    mensagemDiv.addClass("erro");
-    mensagemDiv.text(resultado.erro);
+  if (!data.nome || !data.email || !data.confirmacao) {
+    Swal.fire({
+      title: 'Erro!',
+      text: 'Por favor, preencha todos os campos obrigatórios.',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    });
     return;
   }
-  */
 
-    // Validação dos dados do formulário
-    if (!data.nome || !data.email || !data.confirmacao) {
-      mensagemDiv.text("Por favor, preencha todos os campos obrigatórios.").css("color", "red");
-      return;
-    }
-
-    // Validação do nome
-    if (!validateName(data.nome)) {
-      mensagemDiv.text("Nome inválido.").css("color", "red");
-      return;
-    }
-    // Validação do e-mail
-    if (!validateEmail(data.email)) {
-      mensagemDiv.text("E-mail inválido.").css("color", "red");
-      return;
-    }
-
-    // Verifica se a pessoa tem certeza da sua escolha
-    if (confirm(`Você tem certeza? Sua escolha foi ${data.confirmacao}!`)) {
-      setTimeout(function() {
-        window.location.reload();
-      }, 10000);
-/*
-    // Envia a confirmação de presença via emailjs
-    const response = await emailjs.send("service_d1l02bl", "template_uw7rj2m", {
-      nome: data.nome,
-      email: data.email,
-      confirmacao: data.confirmacao,
+  if (!validateName(data.nome)) {
+    Swal.fire({
+      title: 'Erro!',
+      text: 'Nome inválido.',
+      icon: 'error',
+      confirmButtonText: 'OK'
     });
-*/
-/*
-    // Se a resposta for bem-sucedida, exibe uma mensagem de sucesso
-    if (response.status === 200) {
-      mensagemDiv.text("Confirmação enviada com sucesso!").css("color", "green");
-    }
-*/     
-// Verifica se a pessoa tem certeza da sua escolha
-    setTimeout(function() {
-    if (data.confirmacao === "Sim")
-       {
-        emailjs.send("service_d1l02bl", "sim_uw7rj2m", {
-          nome: data.nome,
-          email: data.email,
-          confirmacao: data.confirmacao,
-          mensagem: "Obrigado por confirmar sua presença.",
-        });
-      }
-      // Envia uma mensagem de não comparecimento
-      else if (data.confirmacao === "Não") {
-        emailjs.send("service_d1l02bl", "nao_1g9i25m", {
-          nome: data.nome,
-          email: data.email,
-          confirmacao: data.confirmacao,
-          mensagem: "Confirmamos que você não comparecerá.",
-        });
-      }
-    }, 2000);
-  } 
+    return;
+  }
 
-    // Exibe uma mensagem de carregamento
-    mensagemDiv.text("Enviando confirmação... Aguarde um momento.");
-    setTimeout(function() {
-      mensagemDiv.text("");
-       // Exibe a notificação com a opção escolhida e o primeiro nome da pessoa
-       const notificacao = $("#notificacao");
-       notificacao.html(`Obrigado, ${data.nome}! Você escolheu ${data.confirmacao} ao evento.`);
-       notificacao.css("display", "block");
-    }, 3000);
+  if (!validateEmail(data.email)) {
+    Swal.fire({
+      title: 'Erro!',
+      text: 'E-mail inválido.',
+      icon: 'error',
+      confirmButtonText: 'OK'
+    });
+    return;
+  }
+
+  const resultado = await Swal.fire({
+    title: 'Você tem certeza?',
+    text: `Sua escolha foi ${data.confirmacao}!`,
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonText: 'Sim',
+    cancelButtonText: 'Não'
   });
-}) 
+
+  if (resultado.isConfirmed) {
+    mensagemDiv.text("Enviando confirmação... Aguarde um momento.");
+    setTimeout(async function() {
+      mensagemDiv.text("");
+      Swal.fire({
+        title: 'Sucesso!',
+        text: `Obrigado, ${data.nome}! Você escolheu ${data.confirmacao} ao evento.`,
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+
+      const templateId = data.confirmacao === "Sim" ? "sim_uw7rj2m" : "nao_1g9i25m";
+      await enviarEmail(templateId, {
+        nome: data.nome,
+        email: data.email,
+        confirmacao: data.confirmacao,
+        mensagem: data.confirmacao === "Sim"
+          ? "Obrigado por confirmar sua presença."
+          : "Confirmamos que você não comparecerá.",
+      });
+    }, 3000);
+  } else {
+    Swal.fire({
+      title: 'Cancelado!',
+      text: 'Confirmação cancelada.',
+      icon: 'info',
+      confirmButtonText: 'OK'
+    });
+  }
+});
       /* Enviar resposta automática
       emailjs.send("service_d1l02bl", "template_uw7rj2m", {
         to_name: data.nome,
@@ -244,4 +248,5 @@ function validateEmail(email) {
   }
 }*/
 
+}); // Fim do $(document).ready
 // Fim do código
