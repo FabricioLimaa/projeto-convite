@@ -195,11 +195,11 @@ form.on("submit", async function(event) {
     confirmButtonText: 'Sim, Confirmo',
     cancelButtonText: 'Não, Cancelar',
     customClass: {
-      popup: 'custom-popup-class',
-      title: 'custom-title-class',
-      text: 'custom-text-class',
-      confirmButton: 'custom-confirm-button-class',
-      cancelButton: 'custom-cancel-button-class'
+      popup: 'custom-presence-popup-class',
+      title: 'custom-presence-title-class',
+      text: 'custom-presence-text-class',
+      confirmButton: 'custom-presence-confirm-button-class',
+      cancelButton: 'custom-presence-cancel-button-class'
     }
   });
 
@@ -212,7 +212,13 @@ form.on("submit", async function(event) {
         title: 'Confirmação Enviada!',
         text: `Obrigado, ${data.nome}! Sua escolha foi registrada com sucesso.`,
         icon: 'success',
-        confirmButtonText: 'Fechar'
+        confirmButtonText: 'Fechar',
+        customClass: {
+          popup: 'custom-confirm-popup-class',
+          title: 'custom-confirm-title-class',
+          text: 'custom-confirm-text-class',
+          confirmButton: 'custom-confirm-button-class'
+        }
       });
 
       const templateId = data.confirmacao === "Sim" ? "sim_uw7rj2m" : "nao_1g9i25m";
@@ -230,7 +236,14 @@ form.on("submit", async function(event) {
       title: 'Cancelado!',
       text: 'Confirmação cancelada.',
       icon: 'info',
-      confirmButtonText: 'Fechar'
+      confirmButtonText: 'Fechar',
+      customClass: {
+        popup: 'custom-popup-class',
+        title: 'custom-title-class',
+        text: 'custom-text-class',
+        confirmButton: 'custom-confirm-button-class',
+        cancelButton: 'custom-cancel-button-class'
+      }
     });
   }
 });

@@ -4,17 +4,15 @@
   --cor-principal: #6E3E20;
   --cor-secundaria: #FCDBE0;
   --cor-terciaria: #FE8AA2;
-  --cor-popup: #FEF2F5;
+  --cor-fundo: #FEF2F5;
+  --cor-texto: #6E3E20;
+  --cor-borda: #6E3E20;
+  --cor-sombra: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  --fundo-footer: transparent;
   
   /* Fonte principal do site */
   --fonte-principal: 'Poppins', sans-serif;
   
-  /* Cores de texto e fundo */
-  --cor-texto: #6E3E20;
-  --cor-fundo: transparent;
-  
-  /* Cor da borda */
-  --cor-borda: #6E3E20;
 }
 
 /* Estilos Globais */
@@ -136,7 +134,7 @@ li {
   margin: auto;
   padding: 15px;
   background-color: var(--cor-secundaria);
-  box-shadow: 0px 4px 8px var(--cor-secundaria);
+  box-shadow: var(--cor-sombra);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -157,28 +155,14 @@ form {
   width: 100%;
   margin: auto;
   padding: 20px;
-  border: 1px solid var(--cor-principal);
   border-radius: 10px;
   background-color: var(--cor-fundo);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--cor-sombra);
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 100px;
   transition: all 0.5s ease-in-out;
-}
-
-/* Estilo da notificação */
-.notificacao {
-  /* Cor do texto da notificação */
-  background-color: var(--cor-fundo);
-  border: 1px solid var(--cor-borda);
-  padding: 10px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
 }
 
 /* Ajuste de rótulos e entrada */
@@ -233,18 +217,6 @@ button {
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
-}
-
-/* Estilo dos erros */
-.erro {
-  /* Cor do texto dos erros */
-  color: #FF0000; /* vermelho */
-  font-size: 18px;
-  font-weight: bold;
-  padding: 10px;
-  border: 1px solid #FF0000;
-  border-radius: 5px;
-  background-color: #FFFFFF;
 }
 
 /* Estilo dos botões ao passar o mouse */
@@ -319,7 +291,7 @@ main {
 /* Estilo do footer */
 footer {
   /* Cor do texto do footer */
-  background-color: var(--cor-fundo);
+  background-color: var(--fundo-footer);
   color: var(--cor-texto);
   text-align: center;
   width: 100%;
@@ -330,55 +302,6 @@ footer {
   border-top: 1px solid var(--cor-terciaria);
 }
 
-/* Estilo da notificação */
-#notificacao {
-  /* Cor do texto da notificação */
-  color: var(--cor-principal);
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translate(50%, -50%);
-  background-color: var(--cor-secundaria);
-  border: 1px solid var(--cor-terciaria);
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
-}
-
-/* Estilo da mensagem */
-#mensagem {
-  /* Tamanho da mensagem */
-  font-size: 18px;
-  font-weight: bold;
-  position: absolute;
-  top: 60%;
-  right: 50%;
-  transform: translate(50%, -50%);
-  z-index: 9999;
-  color: var(--cor-texto);
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo da mensagem de sucesso */
-#mensagem.success {
-  /* Cor do texto da mensagem de sucesso */
-  color: #2ecc71;
-  background-color: var(--cor-fundo);
-  border-color: #2ecc71;
-}
-
-/* Estilo da mensagem de erro */
-#mensagem.error {
-  /* Cor do texto da mensagem de erro */
-  color: #e74c3c;
-  background-color: var(--cor-fundo);
-  border-color:   #e74c3c;
-}
-
-
 /*Estilos para a seção de mensagens*/
 #mensagem-section {
   max-width: 800px;
@@ -387,19 +310,11 @@ footer {
   padding: 20px;
   background-color: var(--cor-fundo);
   border: 1px solid var(--cor-terciaria);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--cor-sombra);
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
-}
-
-#mensagens h2 {
-  margin-top: 0;
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--cor-principal);
-  text-align: center;
 }
 
 #form-mensagem {
@@ -411,7 +326,7 @@ footer {
   padding: 20px;
   background-color: var(--cor-fundo);
   border: 1px solid var(--cor-terciaria);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--cor-sombra);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -448,7 +363,7 @@ footer {
   padding: 20px;
   background-color: var(--cor-fundo);
   border: 1px solid var(--cor-terciaria);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--cor-sombra);
   border-radius: 5px;
 }
 
@@ -474,23 +389,63 @@ footer {
   text-align: right;
 }
 
-/* Estilo Componente Popup */
-/* Estilo do popup */
-.custom-popup-class {
+/* Estilo Componente Popup de Presença */
+/* Estilo do Popup de Presença */
+.custom-presence-popup-class {
   border-radius: 10px;
-  background-color: var(--cor-popup);
+  background-color: var(--cor-fundo);
   font-family: var(--fonte-principal);
-  border: 1px solid var(--cor-terciaria);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--cor-sombra);
   padding: 5%;
 }
 /* Estilo do título do popup */
-.custom-title-class {
+.custom-presence-title-class {
   color: var(--cor-principal);
   font-size: 20px;
 }
 /* Estilo do texto do popup */
-.custom-text-class {
+.custom-presence-text-class {
+  color: var(--cor-principal);
+  font-size: 16px;
+}
+/* Estilo do botão de confirmação do popup */
+.custom-presence-confirm-button-class {
+  background-color: var(--cor-terciaria);
+  color: var(--cor-principal);
+  border-radius: 5px;
+}
+/* Estilo do botão de confirmação do popup ao passar o mouse */
+.custom-presence-confirm-button-class:hover {
+  background-color: var(--cor-secundaria);
+  transition: all 0.1s ease-in-out;
+}
+/* Estilo do botão de cancelamento do popup */
+.custom-presence-button-class {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-principal);
+  border-radius: 5px;
+}
+/* Estilo do botão de cancelamento do popup ao passar o mouse */
+.custom-presence-button-class:hover {
+  background-color: var(--cor-terciaria);
+  transition: all 0.1s ease-in-out;
+}
+
+/* Estilo Componente popup de confirmação */
+/* Estilo do popup de confirmação */
+.custom-confirm-popup-class {
+  border-radius: 10px;
+  background-color: var(--cor-fundo);
+  font-family: var(--fonte-principal);
+  box-shadow: var(--cor-sombra);
+  padding: 5%;
+}
+.custom-confirm-title-class {
+  color: var(--cor-principal);
+  font-size: 20px;
+}
+/* Estilo do texto do popup */
+.custom-confirm-text-class {
   color: var(--cor-principal);
   font-size: 16px;
 }
@@ -505,17 +460,7 @@ footer {
   background-color: var(--cor-secundaria);
   transition: all 0.1s ease-in-out;
 }
-/* Estilo do botão de cancelamento do popup */
-.custom-cancel-button-class {
-  background-color: var(--cor-secundaria);
-  color: var(--cor-principal);
-  border-radius: 5px;
-}
-/* Estilo do botão de cancelamento do popup ao passar o mouse */
-.custom-cancel-button-class:hover {
-  background-color: var(--cor-terciaria);
-  transition: all 0.1s ease-in-out;
-}
+
 
 /* Media Queries para dispositivos móveis */
 @media only screen and (max-width: 480px) {
