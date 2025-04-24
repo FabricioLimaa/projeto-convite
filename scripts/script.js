@@ -134,6 +134,8 @@ async function hasInternetConnection() {
 form.on("submit", async function(event) {
   event.preventDefault();
 
+  // Verifica se o usuário está conectado à internet
+  // Se não estiver, exibe um alerta e não envia o formulário
   const isConnected = await hasInternetConnection();
   if (!isConnected) {
     Swal.fire({
@@ -145,12 +147,15 @@ form.on("submit", async function(event) {
     return;
   }
 
+  // Pega os dados do formulário
   const formData = form.serializeArray();
   const data = {};
   $.each(formData, function() {
     data[this.name] = this.value;
   });
 
+  // Valida os dados do formulário
+  // Verifica se os campos obrigatórios estão preenchidos
   if (!data.nome || !data.email || !data.confirmacao) {
     Swal.fire({
       title: 'Erro!',
@@ -180,7 +185,8 @@ form.on("submit", async function(event) {
     });
     return;
   }
-
+  
+  // Confirmação de presença
   const resultado = await Swal.fire({
     title: 'Confirmação de Presença',
     text: `Você confirma que escolheu "${data.confirmacao}" para o evento?`,
@@ -195,9 +201,9 @@ form.on("submit", async function(event) {
       confirmButton: 'custom-confirm-button-class',
       cancelButton: 'custom-cancel-button-class'
     }
-    
   });
 
+  // Se o usuário confirmar, envia o e-mail de confirmação
   if (resultado.isConfirmed) {
     mensagemDiv.text("Enviando confirmação... Aguarde um momento.");
     setTimeout(async function() {

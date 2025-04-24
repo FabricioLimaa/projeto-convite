@@ -4,6 +4,7 @@
   --cor-principal: #6E3E20;
   --cor-secundaria: #FCDBE0;
   --cor-terciaria: #FE8AA2;
+  --cor-popup: #FEF2F5;
   
   /* Fonte principal do site */
   --fonte-principal: 'Poppins', sans-serif;
@@ -318,7 +319,7 @@ main {
 /* Estilo do footer */
 footer {
   /* Cor do texto do footer */
-  background-color: transparent;
+  background-color: var(--cor-fundo);
   color: var(--cor-texto);
   text-align: center;
   width: 100%;
@@ -357,7 +358,6 @@ footer {
   z-index: 9999;
   color: var(--cor-texto);
   padding: 10px;
-  
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -474,39 +474,44 @@ footer {
   text-align: right;
 }
 
+/* Estilo Componente Popup */
+/* Estilo do popup */
 .custom-popup-class {
   border-radius: 10px;
+  background-color: var(--cor-popup);
   font-family: var(--fonte-principal);
-  
+  border: 1px solid var(--cor-terciaria);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 5%;
 }
-
+/* Estilo do título do popup */
 .custom-title-class {
   color: var(--cor-principal);
   font-size: 20px;
 }
-
+/* Estilo do texto do popup */
 .custom-text-class {
   color: var(--cor-principal);
   font-size: 16px;
 }
-
+/* Estilo do botão de confirmação do popup */
 .custom-confirm-button-class {
   background-color: var(--cor-terciaria);
   color: var(--cor-principal);
   border-radius: 5px;
 }
-
+/* Estilo do botão de confirmação do popup ao passar o mouse */
 .custom-confirm-button-class:hover {
   background-color: var(--cor-secundaria);
   transition: all 0.1s ease-in-out;
 }
-
+/* Estilo do botão de cancelamento do popup */
 .custom-cancel-button-class {
   background-color: var(--cor-secundaria);
   color: var(--cor-principal);
   border-radius: 5px;
 }
-
+/* Estilo do botão de cancelamento do popup ao passar o mouse */
 .custom-cancel-button-class:hover {
   background-color: var(--cor-terciaria);
   transition: all 0.1s ease-in-out;
