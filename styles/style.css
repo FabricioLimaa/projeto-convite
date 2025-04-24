@@ -6,6 +6,7 @@
   --cor-terciaria: #FE8AA2;
   --cor-fundo: #FEF2F5;
   --cor-texto: #6E3E20;
+  --cor-texto-secundario: #b47046;
   --cor-borda: #6E3E20;
   --cor-sombra: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
   --fundo-footer: transparent;
@@ -389,12 +390,11 @@ footer {
   text-align: right;
 }
 
-/* Estilo Componente Popup de Presença */
+/** Estilo Componente Popup de Presença **/
 /* Estilo do Popup de Presença */
 .custom-presence-popup-class {
   border-radius: 10px;
   background-color: var(--cor-fundo);
-  font-family: var(--fonte-principal);
   box-shadow: var(--cor-sombra);
   padding: 5%;
 }
@@ -412,31 +412,34 @@ footer {
 .custom-presence-confirm-button-class {
   background-color: var(--cor-terciaria);
   color: var(--cor-principal);
+  font-family: var(--fonte-principal);
   border-radius: 5px;
 }
 /* Estilo do botão de confirmação do popup ao passar o mouse */
 .custom-presence-confirm-button-class:hover {
-  background-color: var(--cor-secundaria);
+  background-color: var(--cor-principal);
+  color: var(--cor-secundaria);
   transition: all 0.1s ease-in-out;
 }
 /* Estilo do botão de cancelamento do popup */
-.custom-presence-button-class {
+.custom-presence-cancel-button-class {
   background-color: var(--cor-secundaria);
   color: var(--cor-principal);
+  font-family: var(--fonte-principal);
   border-radius: 5px;
 }
 /* Estilo do botão de cancelamento do popup ao passar o mouse */
-.custom-presence-button-class:hover {
+.custom-presence-cancel-button-class:hover {
   background-color: var(--cor-terciaria);
+  color: var(--cor-secundaria);
   transition: all 0.1s ease-in-out;
 }
 
-/* Estilo Componente popup de confirmação */
+/** Estilo Componente popup de confirmação **/
 /* Estilo do popup de confirmação */
 .custom-confirm-popup-class {
   border-radius: 10px;
   background-color: var(--cor-fundo);
-  font-family: var(--fonte-principal);
   box-shadow: var(--cor-sombra);
   padding: 5%;
 }
@@ -457,7 +460,42 @@ footer {
 }
 /* Estilo do botão de confirmação do popup ao passar o mouse */
 .custom-confirm-button-class:hover {
-  background-color: var(--cor-secundaria);
+  background-color: var(--cor-principal);
+  color: var(--cor-secundaria);
+  transition: all 0.1s ease-in-out;
+}
+
+/** Estilo Componente popup de cancelamento **/
+/* Estilo do popup de cancelamento */
+.custom-cancel-popup-class {
+  border-radius: 10px;
+  background-color: var(--cor-fundo);
+  box-shadow: var(--cor-sombra);
+  padding: 5%;
+}
+/* Estilo do título do popup */
+.custom-cancel-title-class {
+  color: var(--cor-principal);
+  font-family: var(--fonte-principal);
+  font-size: 20px;
+}
+/* Estilo do texto do popup */
+.custom-cancel-text-class {
+  color: var(--cor-principal);
+  font-family: var(--fonte-principal);
+  font-size: 16px;
+}
+/* Estilo do botão de confirmação do popup */
+.custom-cancel-button-class {
+  background-color: var(--cor-terciaria);
+  color: var(--cor-principal);
+  border-radius: 5px;
+  font-family: var(--fonte-principal);
+}
+/* Estilo do botão de confirmação do popup ao passar o mouse */
+.custom-cancel-button-class:hover {
+  background-color: var(--cor-principal);
+  color: var(--cor-secundaria);
   transition: all 0.1s ease-in-out;
 }
 

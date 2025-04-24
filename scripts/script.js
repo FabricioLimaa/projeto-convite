@@ -238,11 +238,10 @@ form.on("submit", async function(event) {
       icon: 'info',
       confirmButtonText: 'Fechar',
       customClass: {
-        popup: 'custom-popup-class',
-        title: 'custom-title-class',
-        text: 'custom-text-class',
-        confirmButton: 'custom-confirm-button-class',
-        cancelButton: 'custom-cancel-button-class'
+        popup: 'custom-cancel-popup-class',
+        title: 'custom-cancel-title-class',
+        text: 'custom-cancel-text-class',
+        confirmButton: 'custom-cancel-button-class'
       }
     });
   }
