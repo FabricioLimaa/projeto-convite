@@ -278,8 +278,8 @@ main {
   justify-content: center;
   width: 80px;
   height: 80px;
-  background-color: var(--cor-secundaria);
-  border: 2px solid var(--cor-terciaria);
+  background-color: var(--cor-fundo);
+  box-shadow: var(--cor-sombra);
   border-radius: 50%;
   transition: transform 0.3s;
 }
@@ -300,7 +300,7 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  border-top: 1px solid var(--cor-terciaria);
+  border-top: 1px solid var(--cor-fundo);
 }
 
 /*Estilos para a seção de mensagens*/
